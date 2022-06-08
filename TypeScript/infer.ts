@@ -52,4 +52,4 @@ type GetSecondArgument<T> = T extends (
 type PromiseReturnType<T> = Awaited<T>;
 
 // ArrayType<[string, number]> => string | number
-// ?? type ArrayType<E extends any[]> = typeof infer E; ??
+type ArrayType<T> = T extends Array<infer P> ? P: never;
